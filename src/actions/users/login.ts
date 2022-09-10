@@ -1,5 +1,5 @@
-import { URLAPI } from "@/const";
-import { USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS } from "@/constants";
+import { URLAPI } from "../../const";
+import { USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS } from "../../constants";
 import axios from "axios";
 import swal from "sweetalert";
 

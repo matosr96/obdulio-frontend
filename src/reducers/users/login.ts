@@ -2,7 +2,7 @@ import {
   USER_SIGNIN_FAIL,
   USER_SIGNIN_REQUEST,
   USER_SIGNIN_SUCCESS,
-} from "@/constants";
+} from "../../constants";
 
 export const LoginReducer = (state = {}, action: any) => {
   switch (action.type) {

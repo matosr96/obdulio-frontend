@@ -1,9 +1,24 @@
+import { LoginUser } from "../../actions/users";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const userSingin = useSelector((state: any) => state.userSingin);
+  const { userInfo, loading, error } = userSingin;
+
+  const navigate = useNavigate();
+  const submitHandler = (e: any) => {
+    e.preventDefault();
+
+    dispatch(LoginUser(username, password) as any);
+  };
   return (
     <div className="container-login">
       <div className="card-login">
@@ -12,7 +27,7 @@ const Login = () => {
             <h3>Iniciar Sesion</h3>
           </div>
           <div className="form-login">
-            <form>
+            <form onSubmit={submitHandler}>
               <div className="container-input-login">
                 <input
                   type="text"

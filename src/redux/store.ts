@@ -7,7 +7,7 @@ import {
 } from "redux";
 import thunk from "redux-thunk";
 import * as RR from "react-redux";
-import { LoginReducer } from "@/reducers";
+import { LoginReducer } from "../reducers";
 
 const initialState = {
   userSingin: {
