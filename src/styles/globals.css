@@ -1,0 +1,24 @@
+:root {
+  --body-color: #16213E;
+  --white-color: #EEF2E6;
+  --green-btn: #3D8361;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+}
