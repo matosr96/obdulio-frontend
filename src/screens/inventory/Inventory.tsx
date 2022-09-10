@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
 
 const Inventory = () => {
-  return (
-    <div>Inventory</div>
-  )
-}
+  const userSingin = useSelector((state: any) => state.userSingin);
+  const { userInfo } = userSingin;
+  const { uuid } = userInfo;
+  console.log(uuid);
+  return <div>Inventory</div>;
+};
 
-export default Inventory
+export default Inventory;
