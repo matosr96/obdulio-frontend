@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "../../components/Header/Header";
 import "./inventory.css";
+import ModalCreate from "./NewBook";
 
 const Inventory = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const Inventory = () => {
   const [openModalCreate, setOpenModalCreate] = useState(false);
   const [openModalUpdate, setOpenModalUpdate] = useState(false);
   const [search, setSearch] = useState("");
-  const [openMenu, setOpenMenu] = useState(false);
+
   const [item, setItem] = useState("");
 
   const databook = useMemo(
@@ -87,33 +88,13 @@ const Inventory = () => {
                   <td className="td-center">{book.amount}</td>
                   <td>{book.state}</td>
                   <td>
-                    {" "}
-                    <div className="actions">
-                      <button
-                        className="btn-context"
-                        onClick={() => {
-                          setOpenMenu(!openMenu);
-                          setItem(book._id);
-                        }}
-                      >
-                        <i className="bx bx-dots-vertical-rounded"></i>
+                    <div className="btn-actions-table">
+                      <button className="action-edit">
+                        <i className="bx bx-edit"></i>
                       </button>
-                      <div
-                        className={
-                          openMenu && item == book._id
-                            ? "context-menu active"
-                            : "context-menu"
-                        }
-                      >
-                        <button className="action-edit">
-                          {/* <i className="fas fa-edit"></i> */}
-                          Editar
-                        </button>
-                        <button className="action-trash">
-                          {/* <i className="fas fa-trash"></i> */}
-                          Eliminar
-                        </button>
-                      </div>
+                      <button className="action-trash">
+                        <i className="bx bx-trash"></i>
+                      </button>
                     </div>
                   </td>
                 </tbody>
@@ -122,6 +103,11 @@ const Inventory = () => {
           </div>
         </div>
       </div>
+
+      <ModalCreate
+        openModal={openModalCreate}
+        setOpenModal={setOpenModalCreate}
+      />
     </>
   );
 };

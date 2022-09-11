@@ -7,7 +7,7 @@ import {
 } from "redux";
 import thunk from "redux-thunk";
 import * as RR from "react-redux";
-import { listBookReducer, LoginReducer } from "../reducers";
+import { createBookReducer, listBookReducer, LoginReducer } from "../reducers";
 
 const initialState = {
   userSingin: {
@@ -20,6 +20,7 @@ const initialState = {
 const reducer = combineReducers({
   userSingin: LoginReducer,
   bookList: listBookReducer,
+  bookCreate: createBookReducer,
 });
 
 const composeEnhancer = compose;
