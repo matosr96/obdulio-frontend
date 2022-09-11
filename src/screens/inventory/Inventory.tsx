@@ -7,6 +7,7 @@ import ModalCreate from "./NewBook";
 import ModalUpdate from "./UpdateBook";
 import swal from "sweetalert";
 import { BOOK_DELETE_RESET } from "../../constants";
+import { Link } from "react-router-dom";
 
 const Inventory = () => {
   const dispatch = useDispatch();
@@ -93,9 +94,9 @@ const Inventory = () => {
               </div>
             </div>
             <div className="btn-group">
-              <a className="print" href="/inventary">
+              <Link className="print" to={"/inventary"}>
                 <i className="bx bx-printer"></i>
-              </a>
+              </Link>
 
               <button
                 className="btn-header-screen"
