@@ -93,9 +93,10 @@ const Inventory = () => {
               </div>
             </div>
             <div className="btn-group">
-              <button className="print">
+              <a className="print" href="/inventary">
                 <i className="bx bx-printer"></i>
-              </button>
+              </a>
+
               <button
                 className="btn-header-screen"
                 onClick={() => setOpenModalCreate(!openModalCreate)}

@@ -158,8 +158,10 @@ tbody td {
   width: 4rem;
   border-radius: 0.4rem;
   border: none;
+  background-color: white;
 }
 
 .print i {
   font-size: 2rem;
+  color: #0d0c22;
 }

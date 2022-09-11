@@ -1,0 +1,31 @@
+.container-list {
+  height: 100%;
+  background-color: white;
+}
+
+.header-list {
+  margin-left: 4rem;
+  margin-right: 4rem;
+  padding-top: 4rem;
+  display: flex;
+  gap: 4rem;
+}
+
+.header-list img {
+  max-height: 10rem;
+}
+
+.text-header {
+  width: 100%;
+  text-align: center;
+}
+
+.info-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body-list {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
