@@ -1,9 +1,12 @@
-import { listBooks } from "../../actions";
+import { deleteBook, listBooks } from "../../actions";
 import { useEffect, useMemo, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "../../components/Header/Header";
 import "./inventory.css";
 import ModalCreate from "./NewBook";
+import ModalUpdate from "./UpdateBook";
+import swal from "sweetalert";
+import { BOOK_DELETE_RESET } from "../../constants";
 
 const Inventory = () => {
   const dispatch = useDispatch();
@@ -17,7 +20,13 @@ const Inventory = () => {
 
   const [openModalCreate, setOpenModalCreate] = useState(false);
   const [openModalUpdate, setOpenModalUpdate] = useState(false);
+  const [book_uuid, setBook_uuid] = useState("");
   const [search, setSearch] = useState("");
+
+  const updateHandler = async (uuidProduct: string): Promise<void> => {
+    setBook_uuid(uuidProduct);
+    await setOpenModalUpdate(!openModalUpdate);
+  };
 
   const [item, setItem] = useState("");
 
@@ -33,9 +42,31 @@ const Inventory = () => {
     return e.user === uuid;
   });
 
+  // < --------------------delete process  ------------------------->
+  const bookDelete = useSelector((state: any) => state.bookDelete);
+  const { success: successDelete } = bookDelete;
+
+  const deleteHandler = (book: any) => {
+    swal("Seguro que quieres borrar " + book.title + "?", {
+      icon: "warning",
+      buttons: ["Cancelar", "Si"],
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! " + book.title + " borrado", {
+          icon: "success",
+        });
+        dispatch(deleteBook(book.uuid) as any);
+      }
+    });
+  };
+
   useEffect(() => {
+    if (successDelete) {
+      dispatch({ type: BOOK_DELETE_RESET });
+    }
     dispatch(listBooks(uuid) as any);
-  }, [dispatch]);
+  }, [dispatch, successDelete]);
   return (
     <>
       <Header />
@@ -61,12 +92,17 @@ const Inventory = () => {
                 />
               </div>
             </div>
-            <button
-              className="btn-header-screen"
-              onClick={() => setOpenModalCreate(!openModalCreate)}
-            >
-              Agregar Registro
-            </button>
+            <div className="btn-group">
+              <button className="print">
+                <i className="bx bx-printer"></i>
+              </button>
+              <button
+                className="btn-header-screen"
+                onClick={() => setOpenModalCreate(!openModalCreate)}
+              >
+                Agregar Registro
+              </button>
+            </div>
           </div>
           <div className="container-table">
             <table>
@@ -89,10 +125,16 @@ const Inventory = () => {
                   <td>{book.state}</td>
                   <td>
                     <div className="btn-actions-table">
-                      <button className="action-edit">
+                      <button
+                        className="action-edit"
+                        onClick={() => updateHandler(book.uuid)}
+                      >
                         <i className="bx bx-edit"></i>
                       </button>
-                      <button className="action-trash">
+                      <button
+                        className="action-trash"
+                        onClick={() => deleteHandler(book)}
+                      >
                         <i className="bx bx-trash"></i>
                       </button>
                     </div>
@@ -107,6 +149,12 @@ const Inventory = () => {
       <ModalCreate
         openModal={openModalCreate}
         setOpenModal={setOpenModalCreate}
+      />
+
+      <ModalUpdate
+        openModalUpdate={openModalUpdate}
+        setOpenModalUpdate={setOpenModalUpdate}
+        book_uuid={book_uuid}
       />
     </>
   );
