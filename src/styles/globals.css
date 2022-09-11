@@ -1,18 +1,20 @@
 :root {
-  --body-color: #16213E;
-  --white-color: #EEF2E6;
-  --green-btn: #3D8361;
+  --body-color: #16213e;
+  --white-color: #eef2e6;
+  --green-btn: #3d8361;
+  --secundary-color: #16213E;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
   font-size: 62.5%;
+  background-color: #b7c4cf;
 }
 
 button {
