@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { PrivateRoutes } from "../../constants";
 
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const Header = (props: any) => {
   const { openMenu, setOpenMenu } = props;
@@ -55,7 +55,7 @@ const Header = (props: any) => {
               className="close"
               onClick={() => {
                 signoutHandler;
-                <Link to="/login"></Link>;
+                <Navigate to={"/login"} />;
               }}
             >
               <i className="bx bxs-log-in-circle"></i>
