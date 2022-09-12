@@ -16,7 +16,6 @@ const Header = (props: any) => {
 
   const signoutHandler = () => {
     dispatch(signout() as any);
-    <Link to="/login"></Link>;
   };
 
   const [openModal, setOpenModal] = useState(false);
@@ -52,7 +51,13 @@ const Header = (props: any) => {
       <div className={openMenu ? "openMenu" : "closeMenu"}>
         <aside className="menu-content">
           <div className="logout">
-            <button className="close" onClick={signoutHandler}>
+            <button
+              className="close"
+              onClick={() => {
+                signoutHandler;
+                <Link to="/login"></Link>;
+              }}
+            >
               <i className="bx bxs-log-in-circle"></i>
               <span>Cerrar sesion</span>
             </button>
