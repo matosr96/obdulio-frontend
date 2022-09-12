@@ -20,22 +20,26 @@ Este proyecto esta pensado para manejar de una forma mas amigable los inventario
 ![DELETE](https://user-images.githubusercontent.com/94972642/189668819-28cce634-857e-4fdb-a2ec-8dc890ab54da.png)
 ![LOGOUT](https://user-images.githubusercontent.com/94972642/189668850-8a0e49d6-fd58-43ab-8487-25f5c2f7d11c.png)
 
-Install dependencies
-```
-  cd react-project-template
-  npm install or yard install
-```
+## CARACTERISTICAS
+- Registro de usuarios
+- Validacion de usuarios
+- Inicio de sesion
+- Manejo de token de usuarios
+- Lista de inventarios
+- Agregar registros a inventario
+- Editar registros existentes
+- Eliminar registros
+- Cierre de sesion
 
-Run project
-```
-  npm run dev
-```
-or
-```
-  yarn dev
-```
+## PASOS DE INSTALACION
+1. Clonar repositorio
+2. Entrar desde el terminar a la carpeta del proyecto
+3. Ya en la carpeta del proyecto, ejecutar npm install para instalar todas las dependencias
+4. Abrir repositorio desde tu editor de codigo, preferiblemente visual studio code
+5. Desde el terminar del S.O o del terminal del editor, ejecutar npm run dev para ejecutar el proyecto.
 
 #### Regular dependencies
 - redux
 - react-router-dom
 - vite
+- sweet alert
