@@ -43,3 +43,9 @@ Este proyecto esta pensado para manejar de una forma mas amigable los inventario
 - react-router-dom
 - vite
 - sweet alert
+
+## Licencia
+This proyect is licensed under the MIT License
+
+## Autor
+@matosr96
