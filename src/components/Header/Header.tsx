@@ -16,6 +16,7 @@ const Header = (props: any) => {
 
   const signoutHandler = () => {
     dispatch(signout() as any);
+    <Link to="/login"></Link>;
   };
 
   const [openModal, setOpenModal] = useState(false);
