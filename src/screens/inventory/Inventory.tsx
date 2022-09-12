@@ -21,6 +21,7 @@ const Inventory = () => {
 
   const [openModalCreate, setOpenModalCreate] = useState(false);
   const [openModalUpdate, setOpenModalUpdate] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   const [book_uuid, setBook_uuid] = useState("");
   const [search, setSearch] = useState("");
 
@@ -70,7 +71,7 @@ const Inventory = () => {
   }, [dispatch, successDelete]);
   return (
     <>
-      <Header />
+      <Header openMenu={openMenu} setOpenMenu={setOpenMenu} />
       <div className="screen">
         <div className="header-screen">
           <h3 className="title-screen">Inventario Biblioteca</h3>
