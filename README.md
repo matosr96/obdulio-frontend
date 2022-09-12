@@ -1,10 +1,8 @@
-This is a complete solution, a framework to create a web application of all sizes, with a beautiful development experience and flexible routing based on file systems and the FLUX design pattern.
+#Sistema de gestion de inventarios para bibliotecas
 
-This is a project template for React apps.
+### Este proyecto esta pensado para manejar de una forma mas amigable los inventarios de las bibliotecas, logrando agregar registros, editarlos y eliminarlos a gustos, tienes la opcion de imprimir el reporte de inventarios cuando desees, aun esta en etapa de desarrollo, por lo que se planean agregar mas modulos de funcionamiento en base a los requerimientos que se vallan presentando.
 
-To create a new project based on this template use:
-
-#### Get started
+## Get started
 
 Install dependencies
 ```
