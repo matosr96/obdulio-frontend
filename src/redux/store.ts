@@ -13,6 +13,7 @@ import {
   listBookReducer,
   LoginReducer,
   updateBookReducer,
+  userRegisterReducer,
 } from "../reducers";
 
 const initialState = {
@@ -25,6 +26,7 @@ const initialState = {
 
 const reducer = combineReducers({
   userSingin: LoginReducer,
+  userRegister: userRegisterReducer,
   bookList: listBookReducer,
   bookCreate: createBookReducer,
   bookUpdate: updateBookReducer,

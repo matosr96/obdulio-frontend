@@ -1,7 +1,7 @@
 import { LoginUser } from "../../actions/users";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
@@ -56,6 +56,11 @@ const Login = () => {
             </form>
           </div>
         </div>
+        <div className="footer-register">
+         <span>
+            ¿No tienes cuenta? <Link className="login-link" to={"/register"}>Registrate</Link>
+          </span>
+         </div>
       </div>
     </div>
   );

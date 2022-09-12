@@ -1,10 +1,11 @@
 import { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoadingBox from "./components/LoadingBox";
+import { Login, Register } from "./screens";
 import Inventory from "./screens/inventory/Inventory";
 import ListInventory from "./screens/inventory/ListInventory";
 import NotFound from "./screens/NotFount";
-import Login from "./screens/users/Login";
+
 import AdminRoute from "./utilities/AdminRoute";
 
 const Application = () => {
@@ -13,6 +14,7 @@ const Application = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route
             path="/"
             element={
