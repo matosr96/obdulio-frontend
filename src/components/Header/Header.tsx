@@ -2,20 +2,20 @@ import "./header.css";
 import logo from "../../assets/biblioteca.png";
 import { listBooks, signout } from "../../actions";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { PrivateRoutes } from "../../constants";
-
-import { Link, Navigate } from "react-router-dom";
 
 const Header = (props: any) => {
   const { openMenu, setOpenMenu } = props;
   const dispatch = useDispatch();
+  let navigate = useNavigate();
   const userSingin = useSelector((state: any) => state.userSingin);
   const { userInfo } = userSingin;
   const { uuid, name, username } = userInfo;
 
   const signoutHandler = () => {
     dispatch(signout() as any);
+    navigate("/login");
   };
 
   const [openModal, setOpenModal] = useState(false);
