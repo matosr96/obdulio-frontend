@@ -27,7 +27,7 @@ const Header = (props: any) => {
   useEffect(() => {
     dispatch(listBooks(uuid) as any);
   }, [dispatch]);
-  const colegio = "Obdulio Mayo Scarpeta";
+  const colegio = "Gestion de inventarios";
   return (
     <>
       <div className="header">
