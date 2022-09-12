@@ -51,13 +51,7 @@ const Header = (props: any) => {
       <div className={openMenu ? "openMenu" : "closeMenu"}>
         <aside className="menu-content">
           <div className="logout">
-            <button
-              className="close"
-              onClick={() => {
-                signoutHandler;
-                <Navigate to={"/login"} />;
-              }}
-            >
+            <button className="close" onClick={signoutHandler}>
               <i className="bx bxs-log-in-circle"></i>
               <span>Cerrar sesion</span>
             </button>
