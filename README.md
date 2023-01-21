@@ -1,6 +1,6 @@
 # Sistema de gestion de inventarios para bibliotecas
 
-Este proyecto esta pensado para manejar de una forma mas amigable los inventarios de las bibliotecas, logrando agregar registros, editarlos y eliminarlos a gustos, tienes la opcion de imprimir el reporte de inventarios cuando desees, aun esta en etapa de desarrollo, por lo que se planean agregar mas modulos de funcionamiento en base a los requerimientos que se vallan presentando.
+Este proyecto está diseñado para brindar una gestión eficiente de los inventarios de las bibliotecas, proporcionando una interfaz intuitiva para agregar, editar y eliminar registros. Además, cuenta con la funcionalidad de generar reportes de inventario en formato impreso según sea necesario. Aún se encuentra en fase de desarrollo y se planea implementar módulos adicionales de acuerdo a las demandas y requerimientos del usuario.
 
 ### Tabla de contenido
 - Demo
